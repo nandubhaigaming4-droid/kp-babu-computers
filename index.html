@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <title>K.P. Babu Computers | Since 1995</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <header class="nav">
+    <a class="brand" href="#home">
+      <img src="assets/kp-babu-logo.jpg" alt="K.P. Babu Computers logo">
+      <span><b>K.P. BABU</b><small>COMPUTERS · SINCE 1995</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+    <nav>
+      <a href="#showcase">PC Showcase</a><a href="#builder">PC Builder</a>
+      <a href="#products">Components</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">TRUSTED SINCE 1995</div>
+        <h1>Build your<br><span>next level.</span></h1>
+        <p>Gaming PCs, custom builds, components and expert computer service — built around what you actually need.</p>
+        <div class="actions"><a class="btn primary" href="#showcase">Explore the PC</a><a class="btn ghost" href="#contact">Get a Quote</a></div>
+      </div>
+      <div class="hero-pc">
+        <div class="pc-glow"></div>
+        <div class="pc-case">
+          <div class="glass">
+            <div class="fan f1"></div><div class="fan f2"></div><div class="fan f3"></div>
+            <div class="motherboard"></div><div class="gpu-bar"></div><div class="ram r1"></div><div class="ram r2"></div>
+          </div>
+          <div class="case-edge"></div>
+        </div>
+        <div class="hero-caption"><b>PERFORMANCE WITHOUT COMPROMISE</b><span>Custom PC builds · Gaming · Creator systems</span></div>
+      </div>
+    </section>
+
+    <section id="showcase" class="section showcase">
+      <div class="section-head">
+        <div><div class="eyebrow">SIGNATURE EXPERIENCE</div><h2>Explore what's <span>inside.</span></h2></div>
+        <button id="explodeBtn" class="btn primary">Explore Inside ↗</button>
+      </div>
+      <div class="interactive-wrap">
+        <div class="component-info" id="componentInfo"><small>HOVER A PART</small><h3>Interactive PC</h3><p>Move your cursor over a component to inspect it.</p></div>
+        <div class="pc-stage" id="pcStage">
+          <div class="part case-shell" data-part="Case" style="--x:0px;--y:0px;--z:0px"></div>
+          <div class="part motherboard" data-part="Motherboard" style="--x:0px;--y:0px;--z:8px"></div>
+          <div class="part cpu" data-part="CPU" style="--x:0px;--y:-8px;--z:25px"></div>
+          <div class="part cooler" data-part="CPU Cooler" style="--x:0px;--y:-45px;--z:26px"></div>
+          <div class="part gpu" data-part="GPU" style="--x:0px;--y:50px;--z:30px"></div>
+          <div class="part ram ram-a" data-part="RAM" style="--x:-42px;--y:-15px;--z:28px"></div>
+          <div class="part ram ram-b" data-part="RAM" style="--x:-30px;--y:-15px;--z:28px"></div>
+          <div class="part ssd" data-part="M.2 SSD" style="--x:20px;--y:5px;--z:32px"></div>
+          <div class="part psu" data-part="Power Supply" style="--x:0px;--y:115px;--z:22px"></div>
+          <div class="part fan fan-a" data-part="Case Fan" style="--x:88px;--y:35px;--z:18px"></div>
+          <div class="part fan fan-b" data-part="Case Fan" style="--x:88px;--y:78px;--z:18px"></div>
+        </div>
+      </div>
+      <div class="part-grid">
+        <button data-focus="CPU">CPU<br><small>System brain</small></button>
+        <button data-focus="GPU">GPU<br><small>Graphics engine</small></button>
+        <button data-focus="RAM">RAM<br><small>Fast memory</small></button>
+        <button data-focus="Motherboard">Motherboard<br><small>Connects everything</small></button>
+        <button data-focus="M.2 SSD">SSD<br><small>Fast storage</small></button>
+        <button data-focus="Power Supply">PSU<br><small>Clean power</small></button>
+      </div>
+    </section>
+
+    <section id="builder" class="section dark-card">
+      <div class="section-head"><div><div class="eyebrow">CUSTOM BUILDS</div><h2>Build your <span>dream PC.</span></h2></div></div>
+      <div class="builder">
+        <div class="choices">
+          <label>Processor<select><option>Ryzen 5 / Core i5 class</option><option>Ryzen 7 / Core i7 class</option><option>Ryzen 9 / Core i9 class</option></select></label>
+          <label>Graphics Card<select><option>RTX 3050 / equivalent</option><option>RTX 4060 / equivalent</option><option>RTX 4070 class</option></select></label>
+          <label>Memory<select><option>16 GB DDR4/DDR5</option><option>32 GB DDR4/DDR5</option><option>64 GB DDR5</option></select></label>
+          <label>Storage<select><option>512 GB NVMe SSD</option><option>1 TB NVMe SSD</option><option>2 TB NVMe SSD</option></select></label>
+        </div>
+        <div class="quote-card"><small>BUILD ESTIMATE</small><strong>Get a custom quote</strong><p>Choose the parts you want. Final pricing depends on current stock and configuration.</p><a class="btn primary" href="#contact">Request Quote</a></div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="section-head"><div><div class="eyebrow">WHAT WE OFFER</div><h2>Everything for your <span>setup.</span></h2></div></div>
+      <div class="cards">
+        <article><div class="icon">▣</div><h3>Gaming PCs</h3><p>Balanced systems for competitive gaming and high-quality 1080p/1440p play.</p></article>
+        <article><div class="icon">⚙</div><h3>Components</h3><p>CPU, GPU, motherboard, RAM, SSD, PSU, cooling and cabinets.</p></article>
+        <article><div class="icon">▤</div><h3>Laptops</h3><p>Everyday, professional, creator and gaming laptop guidance.</p></article>
+        <article><div class="icon">⌁</div><h3>Service & Upgrades</h3><p>RAM/SSD upgrades, troubleshooting, cleaning and component replacement.</p></article>
+      </div>
+    </section>
+
+    <section id="reviews" class="section reviews">
+      <div class="section-head"><div><div class="eyebrow">CUSTOMER VOICE</div><h2>People who <span>trusted us.</span></h2></div></div>
+      <div class="review-grid">
+        <article><div class="stars">★★★★★</div><p>“I got a fantastic deal on a CPU for my studio work from K.P. Babu Computers! 💻 The budget was just right, and the quality is excellent. ✨ The CPU looks super cool with its performance. Huge thanks to Guru Bro for the best suggestion! 👍”</p><b>Customer review</b></article>
+        <article><div class="stars">★★★★★</div><p>“Excellent service and genuine guidance. I was confused about which PC to choose for gaming, and the team helped me select the right configuration within my budget.”</p><b>Sample review</b></article>
+        <article><div class="stars">★★★★★</div><p>“Got my custom gaming PC and the build quality is excellent. The performance is exactly what I needed.”</p><b>Sample review</b></article>
+        <article><div class="stars">★★★★★</div><p>“They explained the components clearly instead of simply pushing an expensive configuration. Very helpful experience.”</p><b>Sample review</b></article>
+      </div>
+    </section>
+
+    <section class="section about">
+      <div class="about-copy"><div class="eyebrow">WHY K.P. BABU COMPUTERS?</div><h2>Technology you can <span>trust.</span></h2><p>Serving computer customers since 1995 with practical guidance, custom PC builds, components and technical support.</p></div>
+      <div class="stats"><div><strong>1995</strong><small>Since</small></div><div><strong>PC</strong><small>Custom Builds</small></div><div><strong>24/7*</strong><small>Support goal</small></div></div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div><div class="eyebrow">CONTACT</div><h2>Let's build something <span>great.</span></h2><p class="muted">Replace the placeholders below with the shop's verified details before publishing.</p></div>
+      <div class="contact-grid">
+        <div class="contact-box"><b>SHOP DETAILS</b><p>📍 Address: ADD SHOP ADDRESS</p><p>☎ Phone: ADD PHONE NUMBER</p><p>💬 WhatsApp: ADD WHATSAPP NUMBER</p><p>🕒 Hours: ADD BUSINESS HOURS</p></div>
+        <form class="contact-box" onsubmit="event.preventDefault(); alert('Demo enquiry form. Connect WhatsApp/email before launch.');">
+          <b>GET A QUOTE</b><input required placeholder="Your name"><input required placeholder="Phone number"><textarea required placeholder="What computer / component do you need?"></textarea><button class="btn primary">Send Enquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><img src="assets/kp-babu-logo.jpg" alt=""><span><b>K.P. BABU COMPUTERS</b><small>SINCE 1995</small></span></div><p>© 2026 K.P. Babu Computers. Replace placeholder contact details before launch.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
