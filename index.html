@@ -4,712 +4,639 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#070910">
-
 <title>K.P. Babu Computers | Since 1995</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#070910;
-  color:#f4f6fb;
-  overflow-x:hidden;
+font-family:Arial,Helvetica,sans-serif;
+background:#070910;
+color:#f4f6fb;
+overflow-x:hidden
 }
-
 body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 15% 20%,rgba(255,20,70,.10),transparent 30%),
-    radial-gradient(circle at 85% 30%,rgba(0,100,255,.10),transparent 30%);
-  z-index:-1;
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background:
+radial-gradient(circle at 15% 20%,rgba(255,20,70,.10),transparent 30%),
+radial-gradient(circle at 85% 30%,rgba(0,100,255,.10),transparent 30%);
+z-index:-1
 }
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 
 .nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 5%;
-  background:rgba(7,9,16,.88);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid #202532;
+position:sticky;
+top:0;
+z-index:1000;
+height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 5%;
+background:rgba(7,9,16,.90);
+backdrop-filter:blur(18px);
+border-bottom:1px solid #202532
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
+display:flex;
+align-items:center;
+gap:12px
 }
-
 .brand img{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid #fff;
-  box-shadow:0 0 25px rgba(255,30,70,.35);
+width:48px;
+height:48px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #fff;
+box-shadow:0 0 25px rgba(255,30,70,.35)
 }
-
 .brand b{
-  display:block;
-  font-size:15px;
-  letter-spacing:1px;
+display:block;
+font-size:15px;
+letter-spacing:1px
 }
-
 .brand small{
-  display:block;
-  color:#8c95a8;
-  font-size:9px;
-  margin-top:4px;
-  letter-spacing:1.5px;
+display:block;
+color:#8c95a8;
+font-size:9px;
+margin-top:4px;
+letter-spacing:1.5px
 }
 
 nav{
-  display:flex;
-  gap:26px;
+display:flex;
+gap:26px
 }
-
 nav a{
-  color:#aeb6c7;
-  font-size:13px;
-  transition:.25s;
+color:#aeb6c7;
+font-size:13px;
+transition:.25s
 }
-
-nav a:hover{
-  color:#fff;
-}
+nav a:hover{color:#fff}
 
 .menu-btn{
-  display:none;
-  background:none;
-  border:0;
-  color:white;
-  font-size:30px;
+display:none;
+background:none;
+border:0;
+color:white;
+font-size:30px
 }
 
 .hero{
-  min-height:780px;
-  padding:100px 7%;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:40px;
+min-height:780px;
+padding:100px 7%;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:40px
 }
 
 .eyebrow{
-  color:#9da6ba;
-  letter-spacing:5px;
-  font-size:11px;
-  font-weight:bold;
-  margin-bottom:20px;
+color:#9da6ba;
+letter-spacing:5px;
+font-size:11px;
+font-weight:bold;
+margin-bottom:20px
 }
 
 .hero h1{
-  font-size:clamp(55px,7vw,105px);
-  line-height:.92;
-  letter-spacing:-5px;
+font-size:clamp(55px,7vw,105px);
+line-height:.92;
+letter-spacing:-5px
 }
 
-.hero h1 span,
-h2 span{
-  color:#f3224d;
-}
+.hero h1 span,h2 span{color:#f3224d}
 
 .hero p{
-  max-width:590px;
-  margin:30px 0;
-  color:#aab2c2;
-  font-size:18px;
-  line-height:1.7;
+max-width:590px;
+margin:30px 0;
+color:#aab2c2;
+font-size:18px;
+line-height:1.7
 }
 
 .actions{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
+display:flex;
+gap:14px;
+flex-wrap:wrap
 }
 
 .btn{
-  display:inline-block;
-  padding:17px 27px;
-  border-radius:15px;
-  font-weight:bold;
-  border:1px solid #343a49;
-  cursor:pointer;
-  font-size:15px;
+display:inline-block;
+padding:17px 27px;
+border-radius:15px;
+font-weight:bold;
+border:1px solid #343a49;
+cursor:pointer;
+font-size:15px
 }
 
 .primary{
-  background:linear-gradient(135deg,#f51d48,#ff385b);
-  color:white;
-  border:none;
-  box-shadow:0 15px 40px rgba(245,29,72,.22);
+background:linear-gradient(135deg,#f51d48,#ff385b);
+color:white;
+border:none;
+box-shadow:0 15px 40px rgba(245,29,72,.22)
 }
 
-.ghost{
-  background:#10131b;
-}
+.ghost{background:#10131b}
 
-.hero-pc{
-  text-align:center;
-}
+.hero-pc{text-align:center}
 
 .real-pc{
-  position:relative;
-  width:min(500px,100%);
-  margin:auto;
-  filter:drop-shadow(0 30px 50px rgba(0,0,0,.65));
+position:relative;
+width:min(500px,100%);
+margin:auto;
+filter:drop-shadow(0 30px 50px rgba(0,0,0,.65))
 }
 
 .real-pc img{
-  width:100%;
-  border-radius:24px;
+width:100%;
+border-radius:24px
 }
 
-.hero-caption{
-  margin-top:20px;
-}
-
+.hero-caption{margin-top:20px}
 .hero-caption b{
-  display:block;
-  letter-spacing:3px;
-  font-size:14px;
+display:block;
+letter-spacing:3px;
+font-size:14px
 }
-
 .hero-caption span{
-  display:block;
-  margin-top:8px;
-  color:#858ea0;
+display:block;
+margin-top:8px;
+color:#858ea0
 }
 
 .section{
-  padding:100px 7%;
+padding:100px 7%
 }
 
 .section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:25px;
-  margin-bottom:50px;
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:25px;
+margin-bottom:50px
 }
 
 h2{
-  font-size:clamp(38px,5vw,68px);
-  letter-spacing:-3px;
+font-size:clamp(38px,5vw,68px);
+letter-spacing:-3px
 }
 
-.showcase{
-  background:#080b12;
-}
+.showcase{background:#080b12}
 
 .interactive-wrap{
-  position:relative;
-  min-height:700px;
-  border:1px solid #252b38;
-  border-radius:32px;
-  background:
-    radial-gradient(circle at center,rgba(30,50,90,.18),transparent 55%),
-    #0a0d14;
-  overflow:hidden;
-  padding:40px;
+position:relative;
+min-height:600px;
+border:1px solid #252b38;
+border-radius:32px;
+background:
+radial-gradient(circle at center,rgba(30,50,90,.18),transparent 55%),
+#0a0d14;
+overflow:hidden;
+padding:40px
 }
 
 .pc-stage{
-  width:100%;
-  min-height:620px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
+width:100%;
+min-height:500px;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative
 }
 
 .case-image{
-  width:min(520px,75%);
-  max-height:560px;
-  object-fit:contain;
-  border-radius:25px;
-  filter:drop-shadow(0 25px 40px rgba(0,0,0,.7));
-  transition:.5s;
+width:min(520px,75%);
+max-height:500px;
+object-fit:contain;
+border-radius:25px;
+filter:drop-shadow(0 25px 40px rgba(0,0,0,.7));
+transition:.5s
 }
 
-.case-image.active{
-  transform:scale(1.04);
-}
+.case-image.active{transform:scale(1.04)}
 
 .component-info{
-  position:absolute;
-  left:35px;
-  top:35px;
-  width:310px;
-  padding:28px;
-  border:1px solid #303746;
-  border-radius:22px;
-  background:rgba(8,11,18,.92);
-  backdrop-filter:blur(15px);
-  z-index:10;
+position:absolute;
+left:35px;
+top:35px;
+width:310px;
+padding:28px;
+border:1px solid #303746;
+border-radius:22px;
+background:rgba(8,11,18,.92);
+backdrop-filter:blur(15px);
+z-index:10
 }
 
 .component-info small{
-  color:#8c95a8;
-  letter-spacing:3px;
+color:#8c95a8;
+letter-spacing:3px
 }
 
 .component-info h3{
-  margin:14px 0;
-  font-size:27px;
+margin:14px 0;
+font-size:27px
 }
 
 .component-info p{
-  color:#9aa3b5;
-  line-height:1.6;
+color:#9aa3b5;
+line-height:1.6
 }
 
 .part-grid{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:12px;
-  margin-top:25px;
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:12px;
+margin-top:25px
 }
 
 .part-grid button{
-  background:#10141d;
-  border:1px solid #282f3c;
-  color:#dce1eb;
-  padding:18px 10px;
-  border-radius:16px;
-  cursor:pointer;
-  text-align:left;
-  transition:.25s;
+background:#10141d;
+border:1px solid #282f3c;
+color:#dce1eb;
+padding:18px 10px;
+border-radius:16px;
+cursor:pointer;
+text-align:left;
+transition:.25s
 }
 
 .part-grid button:hover,
 .part-grid button.selected{
-  border-color:#f3224d;
-  background:#151923;
-  transform:translateY(-3px);
+border-color:#f3224d;
+background:#151923;
+transform:translateY(-3px)
 }
 
-.part-grid small{
-  color:#778195;
-}
+.part-grid small{color:#778195}
 
 .real-parts{
-  margin-top:45px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+margin-top:45px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px
 }
 
 .real-part{
-  position:relative;
-  min-height:260px;
-  border:1px solid #292f3c;
-  border-radius:22px;
-  background:#0d1119;
-  padding:20px;
-  overflow:hidden;
-  transition:.3s;
+position:relative;
+min-height:260px;
+border:1px solid #292f3c;
+border-radius:22px;
+background:#0d1119;
+padding:20px;
+overflow:hidden;
+transition:.3s
 }
 
 .real-part:hover{
-  transform:translateY(-6px);
-  border-color:#f3224d;
-  box-shadow:0 20px 50px rgba(0,0,0,.35);
+transform:translateY(-6px);
+border-color:#f3224d;
+box-shadow:0 20px 50px rgba(0,0,0,.35)
+}
+
+.real-part.highlight{
+border-color:#f3224d;
+box-shadow:0 0 40px rgba(243,34,77,.25);
+transform:translateY(-5px)
 }
 
 .real-part img{
-  width:100%;
-  height:190px;
-  object-fit:contain;
-  border-radius:12px;
+width:100%;
+height:190px;
+object-fit:contain;
+border-radius:12px
 }
 
 .real-part h3{
-  margin-top:15px;
-  font-size:18px;
+margin-top:15px;
+font-size:18px
 }
 
 .real-part p{
-  color:#788397;
-  font-size:12px;
-  margin-top:5px;
+color:#788397;
+font-size:12px;
+margin-top:5px
 }
 
-.dark-card{
-  background:#0b0e15;
-}
+.dark-card{background:#0b0e15}
 
 .builder{
-  display:grid;
-  grid-template-columns:1.5fr .8fr;
-  gap:25px;
+display:grid;
+grid-template-columns:1.5fr .8fr;
+gap:25px
 }
 
 .choices{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px
 }
 
 label{
-  color:#aeb6c7;
-  font-size:13px;
+color:#aeb6c7;
+font-size:13px
 }
 
-select,
-input,
-textarea{
-  width:100%;
-  margin-top:10px;
-  padding:17px;
-  border-radius:13px;
-  border:1px solid #2b3240;
-  background:#0f131c;
-  color:white;
-  outline:none;
+select,input,textarea{
+width:100%;
+margin-top:10px;
+padding:17px;
+border-radius:13px;
+border:1px solid #2b3240;
+background:#0f131c;
+color:white;
+outline:none
 }
 
 .quote-card{
-  border:1px solid #303746;
-  border-radius:24px;
-  padding:30px;
-  background:#0d1119;
+border:1px solid #303746;
+border-radius:24px;
+padding:30px;
+background:#0d1119
 }
 
 .quote-card small{
-  color:#8e97a9;
-  letter-spacing:3px;
+color:#8e97a9;
+letter-spacing:3px
 }
 
 .quote-card strong{
-  display:block;
-  font-size:28px;
-  margin:15px 0;
+display:block;
+font-size:28px;
+margin:15px 0
 }
 
 .quote-card p{
-  color:#8993a6;
-  line-height:1.6;
-  margin-bottom:25px;
+color:#8993a6;
+line-height:1.6;
+margin-bottom:25px
 }
 
 .cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px
 }
 
 .cards article,
 .review-grid article{
-  background:#0d1119;
-  border:1px solid #282f3c;
-  border-radius:22px;
-  padding:28px;
+background:#0d1119;
+border:1px solid #282f3c;
+border-radius:22px;
+padding:28px
 }
 
 .icon{
-  font-size:32px;
-  margin-bottom:20px;
+font-size:32px;
+margin-bottom:20px
 }
 
-.cards h3{
-  margin-bottom:12px;
-}
+.cards h3{margin-bottom:12px}
 
 .cards p{
-  color:#858fa2;
-  line-height:1.6;
-  font-size:14px;
+color:#858fa2;
+line-height:1.6;
+font-size:14px
 }
 
 .review-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px
 }
 
 .stars{
-  color:#ff3158;
-  letter-spacing:4px;
-  margin-bottom:15px;
+color:#ff3158;
+letter-spacing:4px;
+margin-bottom:15px
 }
 
 .review-grid p{
-  color:#9aa3b4;
-  line-height:1.7;
-  margin-bottom:20px;
+color:#9aa3b4;
+line-height:1.7;
+margin-bottom:20px
 }
 
-.review-grid b{
-  font-size:13px;
-}
+.review-grid b{font-size:13px}
 
 .about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center
 }
 
 .about-copy p{
-  color:#929bad;
-  line-height:1.8;
-  font-size:17px;
-  margin-top:25px;
+color:#929bad;
+line-height:1.8;
+font-size:17px;
+margin-top:25px
 }
 
 .stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
 }
 
 .stats div{
-  padding:30px 15px;
-  background:#0d1119;
-  border:1px solid #282f3c;
-  border-radius:20px;
-  text-align:center;
+padding:30px 15px;
+background:#0d1119;
+border:1px solid #282f3c;
+border-radius:20px;
+text-align:center
 }
 
 .stats strong{
-  display:block;
-  font-size:28px;
-  color:#f32650;
+display:block;
+font-size:28px;
+color:#f32650
 }
 
-.stats small{
-  color:#8992a5;
-}
+.stats small{color:#8992a5}
 
 .contact-grid{
-  margin-top:40px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+margin-top:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px
 }
 
 .contact-box{
-  background:#0d1119;
-  border:1px solid #282f3c;
-  border-radius:22px;
-  padding:28px;
+background:#0d1119;
+border:1px solid #282f3c;
+border-radius:22px;
+padding:28px
 }
 
 .contact-box p{
-  color:#919bad;
-  margin-top:18px;
+color:#919bad;
+margin-top:18px
 }
 
 form{
-  display:flex;
-  flex-direction:column;
-  gap:5px;
+display:flex;
+flex-direction:column;
+gap:5px
 }
 
 textarea{
-  min-height:130px;
-  resize:vertical;
+min-height:130px;
+resize:vertical
 }
 
 .muted{
-  color:#7f899c;
-  margin-top:15px;
+color:#7f899c;
+margin-top:15px
 }
 
 footer{
-  border-top:1px solid #222834;
-  padding:45px 7%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:25px;
+border-top:1px solid #222834;
+padding:45px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:25px
 }
 
 footer p{
-  color:#6f798b;
-  font-size:12px;
+color:#6f798b;
+font-size:12px
 }
-
-/* Mobile */
 
 @media(max-width:900px){
 
-  nav{
-    display:none;
-  }
+nav{display:none}
 
-  .menu-btn{
-    display:block;
-  }
+.menu-btn{display:block}
 
-  .hero{
-    grid-template-columns:1fr;
-    padding:70px 5%;
-    min-height:auto;
-  }
+.hero{
+grid-template-columns:1fr;
+padding:70px 5%;
+min-height:auto
+}
 
-  .hero h1{
-    font-size:58px;
-    letter-spacing:-3px;
-  }
+.hero h1{
+font-size:58px;
+letter-spacing:-3px
+}
 
-  .hero-pc{
-    margin-top:20px;
-  }
+.hero-pc{margin-top:20px}
 
-  .section{
-    padding:75px 5%;
-  }
+.section{padding:75px 5%}
 
-  .section-head{
-    align-items:start;
-    flex-direction:column;
-  }
+.section-head{
+align-items:start;
+flex-direction:column
+}
 
-  .interactive-wrap{
-    padding:20px;
-    min-height:auto;
-  }
+.interactive-wrap{
+padding:20px;
+min-height:auto
+}
 
-  .pc-stage{
-    min-height:520px;
-    padding-top:220px;
-  }
+.pc-stage{
+min-height:500px;
+padding-top:200px
+}
 
-  .case-image{
-    width:95%;
-  }
+.case-image{width:95%}
 
-  .component-info{
-    left:20px;
-    right:20px;
-    top:20px;
-    width:auto;
-  }
+.component-info{
+left:20px;
+right:20px;
+top:20px;
+width:auto
+}
 
-  .part-grid{
-    grid-template-columns:1fr 1fr;
-  }
+.part-grid{
+grid-template-columns:1fr 1fr
+}
 
-  .real-parts{
-    grid-template-columns:1fr 1fr;
-  }
+.real-parts{
+grid-template-columns:1fr 1fr
+}
 
-  .builder{
-    grid-template-columns:1fr;
-  }
+.builder{grid-template-columns:1fr}
 
-  .cards{
-    grid-template-columns:1fr 1fr;
-  }
+.cards{
+grid-template-columns:1fr 1fr
+}
 
-  .about{
-    grid-template-columns:1fr;
-  }
+.about{
+grid-template-columns:1fr
+}
 
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
+.contact-grid{
+grid-template-columns:1fr
+}
 
-  footer{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+footer{
+flex-direction:column;
+align-items:flex-start
+}
 }
 
 @media(max-width:520px){
 
-  .brand span{
-    display:none;
-  }
+.brand span{display:none}
 
-  .hero h1{
-    font-size:50px;
-  }
+.hero h1{font-size:50px}
 
-  .hero p{
-    font-size:15px;
-  }
+.hero p{font-size:15px}
 
-  .actions .btn{
-    width:100%;
-    text-align:center;
-  }
+.actions .btn{
+width:100%;
+text-align:center
+}
 
-  .part-grid{
-    grid-template-columns:1fr 1fr;
-  }
+.real-parts{grid-template-columns:1fr}
 
-  .real-parts{
-    grid-template-columns:1fr;
-  }
+.choices{grid-template-columns:1fr}
 
-  .choices{
-    grid-template-columns:1fr;
-  }
+.cards{grid-template-columns:1fr}
 
-  .cards{
-    grid-template-columns:1fr;
-  }
+.review-grid{grid-template-columns:1fr}
 
-  .review-grid{
-    grid-template-columns:1fr;
-  }
+.stats{grid-template-columns:1fr}
 
-  .stats{
-    grid-template-columns:1fr;
-  }
+h2{font-size:40px}
 
-  h2{
-    font-size:40px;
-  }
+.pc-stage{
+min-height:430px;
+padding-top:190px
+}
 
-  .pc-stage{
-    min-height:430px;
-  }
+.component-info{
+padding:20px
+}
+
+.component-info h3{font-size:22px}
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
 <header class="nav">
 
 <a class="brand" href="#home">
+
 <img src="assets/kp-babu-logo.jpg" alt="K.P. Babu Computers">
+
 <span>
 <b>K.P. BABU COMPUTERS</b>
 <small>COMPUTERS · SINCE 1995</small>
 </span>
+
 </a>
 
 <nav>
@@ -720,12 +647,10 @@ footer p{
 <a href="#contact">Contact</a>
 </nav>
 
-<button class="menu-btn">☰</button>
+<button class="menu-btn" aria-label="Menu">☰</button>
 
 </header>
 
-
-<!-- HERO -->
 
 <main id="home">
 
@@ -756,12 +681,19 @@ built around what you actually need.
 <div class="hero-pc">
 
 <div class="real-pc">
+
 <img src="assets/pc-case.jpg" alt="Gaming PC">
+
 </div>
 
 <div class="hero-caption">
+
 <b>PERFORMANCE WITHOUT COMPROMISE</b>
-<span>Custom PC builds · Gaming · Creator systems</span>
+
+<span>
+Custom PC builds · Gaming · Creator systems
+</span>
+
 </div>
 
 </div>
@@ -769,17 +701,18 @@ built around what you actually need.
 </section>
 
 
-<!-- REAL PC SHOWCASE -->
-
 <section id="showcase" class="section showcase">
 
 <div class="section-head">
 
 <div>
+
 <div class="eyebrow">SIGNATURE EXPERIENCE</div>
+
 <h2>
 Explore what's <span>inside.</span>
 </h2>
+
 </div>
 
 <a class="btn primary" href="#realparts">
@@ -798,8 +731,7 @@ Explore Inside ↗
 <h3 id="infoTitle">Gaming PC</h3>
 
 <p id="infoText">
-Explore the actual components used inside a modern gaming PC.
-Tap a component below to inspect it.
+Tap any component below to explore the real hardware.
 </p>
 
 </div>
@@ -822,49 +754,41 @@ alt="Real Gaming PC"
 <div class="part-grid">
 
 <button data-part="CPU">
-CPU
-<br>
+CPU<br>
 <small>Processor</small>
 </button>
 
 <button data-part="GPU">
-GPU
-<br>
+GPU<br>
 <small>Graphics Card</small>
 </button>
 
 <button data-part="RAM">
-RAM
-<br>
+RAM<br>
 <small>Memory</small>
 </button>
 
 <button data-part="Motherboard">
-Motherboard
-<br>
+Motherboard<br>
 <small>Main Board</small>
 </button>
 
 <button data-part="M.2 SSD">
-SSD
-<br>
+SSD<br>
 <small>Storage</small>
 </button>
 
 <button data-part="Power Supply">
-PSU
-<br>
+PSU<br>
 <small>Power</small>
 </button>
 
 </div>
 
 
-<!-- REAL PARTS -->
-
 <div id="realparts">
 
-<div class="eyebrow" style="margin-top:70px;">
+<div class="eyebrow" style="margin-top:70px">
 REAL HARDWARE
 </div>
 
@@ -877,60 +801,91 @@ Every part <span>matters.</span>
 
 
 <div class="real-part" data-name="CPU">
-<img src="assets/cpu.jpg" alt="AMD Ryzen CPU">
+
+<img src="assets/cpu.jpg" alt="CPU Processor">
+
 <h3>CPU</h3>
+
 <p>Processor · System Brain</p>
+
 </div>
 
 
 <div class="real-part" data-name="GPU">
+
 <img src="assets/gpu.png" alt="Graphics Card">
+
 <h3>GPU</h3>
+
 <p>Graphics Engine</p>
+
 </div>
 
 
 <div class="real-part" data-name="Motherboard">
+
 <img src="assets/motherboard.jpg" alt="Motherboard">
+
 <h3>Motherboard</h3>
-<p>Connects every component</p>
+
+<p>Main PC board</p>
+
 </div>
 
 
 <div class="real-part" data-name="RAM">
+
 <img src="assets/ram.jpg" alt="RAM">
+
 <h3>RAM</h3>
+
 <p>Fast System Memory</p>
+
 </div>
 
 
 <div class="real-part" data-name="M.2 SSD">
-<img src="assets/SSD.jpg" alt="NVMe SSD">
+
+<img src="assets/SSD.jpg" alt="M.2 SSD">
+
 <h3>M.2 SSD</h3>
+
 <p>High-speed storage</p>
+
 </div>
 
 
 <div class="real-part" data-name="Power Supply">
+
 <img src="assets/psu.jpg" alt="Power Supply">
+
 <h3>Power Supply</h3>
+
 <p>Stable power delivery</p>
+
 </div>
 
 
 <div class="real-part" data-name="CPU Cooler">
+
 <img src="assets/cooler.jpg" alt="CPU Cooler">
+
 <h3>CPU Cooler</h3>
+
 <p>Temperature control</p>
+
 </div>
 
 
 <div class="real-part" data-name="Case Fan">
-<img src="assets/fan.png" alt="RGB Fan">
-<h3>Case Fan</h3>
-<p>Airflow & cooling</p>
-</div>
 
+<img src="assets/fan.png" alt="Case Fan">
+
+<h3>Case Fan</h3>
+
+<p>Airflow & cooling</p>
+
+</div>
 
 </div>
 
@@ -939,13 +894,12 @@ Every part <span>matters.</span>
 </section>
 
 
-<!-- PC BUILDER -->
-
 <section id="builder" class="section dark-card">
 
 <div class="section-head">
 
 <div>
+
 <div class="eyebrow">CUSTOM BUILDS</div>
 
 <h2>
@@ -1037,8 +991,6 @@ Request Quote
 </section>
 
 
-<!-- PRODUCTS -->
-
 <section id="products" class="section">
 
 <div class="section-head">
@@ -1059,46 +1011,60 @@ Everything for your <span>setup.</span>
 <div class="cards">
 
 <article>
+
 <div class="icon">🖥️</div>
+
 <h3>Gaming PCs</h3>
+
 <p>
 Balanced systems for competitive gaming and high-quality 1080p/1440p play.
 </p>
+
 </article>
 
 
 <article>
+
 <div class="icon">⚙️</div>
+
 <h3>Components</h3>
+
 <p>
 CPU, GPU, motherboard, RAM, SSD, PSU, cooling and cabinets.
 </p>
+
 </article>
 
 
 <article>
+
 <div class="icon">💻</div>
+
 <h3>Laptops</h3>
+
 <p>
 Everyday, professional, creator and gaming laptop guidance.
 </p>
+
 </article>
 
 
 <article>
+
 <div class="icon">🔧</div>
+
 <h3>Service & Upgrades</h3>
+
 <p>
 RAM/SSD upgrades, troubleshooting, cleaning and component replacement.
 </p>
+
 </article>
 
 </div>
 
 </section>
 
-
-<!-- REVIEWS -->
 
 <section id="reviews" class="section">
 
@@ -1124,7 +1090,7 @@ People who <span>trusted us.</span>
 <div class="stars">★★★★★</div>
 
 <p>
-“I got a fantastic deal on a CPU for my studio work from K.P. Babu Computers! The budget was just right, and the quality is excellent. The CPU looks super cool with its performance. Huge thanks for the best suggestion!”
+“I got a fantastic deal on a CPU for my studio work from K.P. Babu Computers! The budget was just right, and the quality is excellent. Huge thanks for the best suggestion!”
 </p>
 
 <b>Customer review</b>
@@ -1175,8 +1141,6 @@ People who <span>trusted us.</span>
 </section>
 
 
-<!-- ABOUT -->
-
 <section class="section about">
 
 <div class="about-copy">
@@ -1219,22 +1183,18 @@ custom PC builds, components and technical support.
 </section>
 
 
-<!-- CONTACT -->
-
 <section id="contact" class="section">
 
 <div>
 
-<div class="eyebrow">
-CONTACT
-</div>
+<div class="eyebrow">CONTACT</div>
 
 <h2>
 Let's build something <span>great.</span>
 </h2>
 
 <p class="muted">
-Replace the placeholders below with the shop's verified details.
+Contact details can be updated once the shop owner provides the verified information.
 </p>
 
 </div>
@@ -1262,27 +1222,17 @@ Replace the placeholders below with the shop's verified details.
 
 <b>GET A QUOTE</b>
 
-<input
-required
-placeholder="Your name"
->
+<input required placeholder="Your name">
 
-<input
-required
-placeholder="Phone number"
->
+<input required placeholder="Phone number">
 
-<textarea
-required
-placeholder="What computer / component do you need?"
-></textarea>
+<textarea required placeholder="What computer / component do you need?"></textarea>
 
-<button class="btn primary">
+<button class="btn primary" type="submit">
 Send Enquiry
 </button>
 
 </form>
-
 
 </div>
 
@@ -1291,8 +1241,6 @@ Send Enquiry
 </main>
 
 
-<!-- FOOTER -->
-
 <footer>
 
 <div class="brand">
@@ -1300,8 +1248,11 @@ Send Enquiry
 <img src="assets/kp-babu-logo.jpg" alt="K.P. Babu Computers">
 
 <span>
+
 <b>K.P. BABU COMPUTERS</b>
+
 <small>SINCE 1995</small>
+
 </span>
 
 </div>
@@ -1315,24 +1266,24 @@ Send Enquiry
 
 <script>
 
-const infoTitle = document.getElementById("infoTitle");
-const infoText = document.getElementById("infoText");
+const infoTitle=document.getElementById("infoTitle");
+const infoText=document.getElementById("infoText");
 
-const information = {
+const information={
 
 "CPU":{
 title:"CPU — Processor",
-text:"The CPU is the brain of the computer. AMD Ryzen and Intel Core processors power gaming, productivity and everyday performance."
+text:"The CPU is the brain of the computer. AMD Ryzen and Intel Core processors handle gaming, applications and everyday performance."
 },
 
 "GPU":{
 title:"GPU — Graphics Card",
-text:"The GPU handles graphics and gaming workloads. It is one of the most important components for high-quality gaming."
+text:"The GPU handles graphics and gaming workloads. It is especially important for high-quality gaming and creative applications."
 },
 
 "RAM":{
 title:"RAM — System Memory",
-text:"RAM gives the computer fast temporary memory for games, applications and multitasking."
+text:"RAM provides fast temporary memory for games, applications and multitasking."
 },
 
 "Motherboard":{
@@ -1342,12 +1293,12 @@ text:"The motherboard connects the CPU, GPU, RAM, storage and other components t
 
 "M.2 SSD":{
 title:"M.2 NVMe SSD",
-text:"An NVMe SSD provides fast storage and significantly improves boot, application and game loading times."
+text:"An NVMe SSD provides fast storage and improves system boot, application and game loading times."
 },
 
 "Power Supply":{
 title:"Power Supply",
-text:"The PSU converts electricity into stable power required by the computer's components."
+text:"The PSU provides stable electrical power to the computer's components."
 }
 
 };
@@ -1357,37 +1308,46 @@ document.querySelectorAll(".part-grid button").forEach(button=>{
 
 button.addEventListener("click",()=>{
 
-const part = button.dataset.part;
+const part=button.dataset.part;
 
-document.querySelectorAll(".part-grid button")
+document
+.querySelectorAll(".part-grid button")
 .forEach(b=>b.classList.remove("selected"));
 
 button.classList.add("selected");
 
+
+document
+.querySelectorAll(".real-part")
+.forEach(p=>p.classList.remove("highlight"));
+
+
 if(information[part]){
 
-infoTitle.textContent = information[part].title;
+infoTitle.textContent=information[part].title;
 
-infoText.textContent = information[part].text;
+infoText.textContent=information[part].text;
 
 }
 
-const target = document.querySelector(
+
+const target=document.querySelector(
 '.real-part[data-name="'+part+'"]'
 );
 
+
 if(target){
+
+target.classList.add("highlight");
 
 target.scrollIntoView({
 behavior:"smooth",
 block:"center"
 });
 
-target.style.borderColor="#f3224d";
-
 setTimeout(()=>{
-target.style.borderColor="";
-},1500);
+target.classList.remove("highlight");
+},2500);
 
 }
 
@@ -1396,13 +1356,14 @@ target.style.borderColor="";
 });
 
 
-document.getElementById("quoteForm")
+document
+.getElementById("quoteForm")
 .addEventListener("submit",function(e){
 
 e.preventDefault();
 
 alert(
-"Thank you! Your enquiry form is ready. Connect the shop WhatsApp number before launch."
+"Thank you! Your enquiry has been received. Shop WhatsApp/contact connection can be added next."
 );
 
 });
@@ -1411,4 +1372,4 @@ alert(
 </script>
 
 </body>
-                  </html>
+</html>
