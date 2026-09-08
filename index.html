@@ -1,32 +1,1186 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#080b12">
-  <title>K.P. Babu Computers | Since 1995</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#05070c">
+<meta name="description" content="K.P. Babu Computers - Gaming PCs, custom builds, components, laptops and computer services since 1995.">
+
+<title>K.P. Babu Computers | Since 1995</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Arial,sans-serif;
+    background:#05070c;
+    color:#f4f7ff;
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(0,100,255,.12),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(255,0,45,.10),transparent 30%);
+    z-index:-1;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+.nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 6%;
+    background:rgba(5,7,12,.86);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand img{
+    width:52px;
+    height:52px;
+    border-radius:12px;
+    object-fit:cover;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.brand b{
+    display:block;
+    font-size:16px;
+    letter-spacing:1.5px;
+}
+
+.brand small{
+    display:block;
+    color:#8e9bb5;
+    font-size:9px;
+    margin-top:3px;
+    letter-spacing:1.5px;
+}
+
+.nav nav{
+    display:flex;
+    gap:24px;
+    align-items:center;
+}
+
+.nav nav a{
+    color:#aeb8cb;
+    font-size:13px;
+    transition:.25s;
+}
+
+.nav nav a:hover{
+    color:white;
+}
+
+.menu-btn{
+    display:none;
+    background:#111722;
+    border:1px solid #263044;
+    color:white;
+    padding:9px 12px;
+    border-radius:9px;
+}
+
+.hero{
+    min-height:760px;
+    padding:80px 6%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:50px;
+    position:relative;
+}
+
+.eyebrow{
+    color:#ff334f;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:3px;
+    margin-bottom:16px;
+}
+
+.hero h1{
+    font-size:clamp(48px,7vw,92px);
+    line-height:.92;
+    letter-spacing:-4px;
+}
+
+.hero h1 span,
+h2 span{
+    background:linear-gradient(90deg,#ff243f,#ff6175,#ffffff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:560px;
+    color:#9aa6bc;
+    font-size:17px;
+    line-height:1.7;
+    margin:28px 0;
+}
+
+.actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    padding:13px 20px;
+    font-weight:800;
+    font-size:13px;
+    cursor:pointer;
+    border:0;
+    transition:.25s;
+}
+
+.btn.primary{
+    background:linear-gradient(135deg,#ff1838,#ff4962);
+    color:white;
+    box-shadow:0 10px 35px rgba(255,30,60,.2);
+}
+
+.btn.primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 45px rgba(255,30,60,.35);
+}
+
+.btn.ghost{
+    border:1px solid #303a4d;
+    background:#0d111a;
+    color:white;
+}
+
+.hero-pc{
+    position:relative;
+    min-height:560px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.pc-glow{
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,rgba(255,30,50,.35),transparent 65%);
+    filter:blur(25px);
+}
+
+.pc-realistic{
+    width:min(390px,90%);
+    height:500px;
+    position:relative;
+    border-radius:22px;
+    background:
+        linear-gradient(135deg,#171b25,#080a0f);
+    border:1px solid #3a4354;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.03),
+        0 35px 100px rgba(0,0,0,.8),
+        0 0 70px rgba(255,20,50,.12);
+    transform:perspective(900px) rotateY(-8deg);
+    overflow:hidden;
+}
+
+.pc-glass{
+    position:absolute;
+    inset:12px;
+    border-radius:15px;
+    background:
+        radial-gradient(circle at 75% 30%,rgba(255,40,80,.25),transparent 25%),
+        radial-gradient(circle at 30% 65%,rgba(30,120,255,.18),transparent 30%),
+        linear-gradient(130deg,rgba(255,255,255,.08),rgba(255,255,255,.015));
+    border:1px solid rgba(255,255,255,.14);
+    overflow:hidden;
+}
+
+.fan{
+    position:absolute;
+    width:105px;
+    height:105px;
+    border-radius:50%;
+    border:5px solid rgba(255,40,70,.75);
+    box-shadow:0 0 35px rgba(255,30,60,.4);
+    animation:spin 5s linear infinite;
+}
+
+.fan:before,
+.fan:after{
+    content:"";
+    position:absolute;
+    inset:18px;
+    border-radius:50%;
+    border:2px solid rgba(100,160,255,.6);
+}
+
+.fan:after{
+    inset:38px;
+    background:#10151e;
+}
+
+.f1{right:18px;top:35px}
+.f2{right:18px;top:150px}
+.f3{right:18px;top:265px}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+.gpu-bar{
+    position:absolute;
+    left:35px;
+    top:275px;
+    width:200px;
+    height:72px;
+    border-radius:10px;
+    background:linear-gradient(90deg,#171c26,#323b4d);
+    border:1px solid #596478;
+    box-shadow:0 0 30px rgba(30,110,255,.18);
+}
+
+.gpu-bar:after{
+    content:"GPU";
+    position:absolute;
+    right:15px;
+    top:27px;
+    font-size:10px;
+    color:#8fa1bd;
+    letter-spacing:2px;
+}
+
+.ram-stick{
+    position:absolute;
+    width:12px;
+    height:105px;
+    background:linear-gradient(#e32d4c,#601522);
+    border-radius:4px;
+    top:80px;
+    left:45px;
+    box-shadow:0 0 20px rgba(255,30,60,.3);
+}
+
+.ram-stick.two{
+    left:65px;
+}
+
+.hero-caption{
+    position:absolute;
+    bottom:5px;
+    left:0;
+    right:0;
+    text-align:center;
+}
+
+.hero-caption b{
+    display:block;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.hero-caption span{
+    color:#7e899e;
+    font-size:11px;
+}
+
+.section{
+    padding:100px 6%;
+    max-width:1450px;
+    margin:auto;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:25px;
+    margin-bottom:45px;
+}
+
+h2{
+    font-size:clamp(32px,5vw,58px);
+    line-height:1;
+    letter-spacing:-2px;
+}
+
+.muted{
+    color:#8792a7;
+    line-height:1.7;
+}
+
+/* REAL COMPONENT SHOWCASE */
+
+.component-showcase{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:30px;
+}
+
+.hardware-stage{
+    min-height:600px;
+    position:relative;
+    border:1px solid #222b3b;
+    border-radius:25px;
+    background:
+        radial-gradient(circle at 50% 50%,rgba(255,30,55,.08),transparent 40%),
+        linear-gradient(145deg,#0d121b,#07090e);
+    overflow:hidden;
+    padding:30px;
+}
+
+.stage-title{
+    position:absolute;
+    top:25px;
+    left:30px;
+    color:#77849b;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.hardware-board{
+    position:absolute;
+    left:50%;
+    top:52%;
+    transform:translate(-50%,-50%);
+    width:390px;
+    height:390px;
+    border-radius:16px;
+    background:
+        linear-gradient(145deg,#17261f,#0a1711);
+    border:1px solid #40574a;
+    box-shadow:0 30px 80px rgba(0,0,0,.7);
+}
+
+.hardware-board:before{
+    content:"";
+    position:absolute;
+    width:125px;
+    height:125px;
+    left:55px;
+    top:70px;
+    background:
+        repeating-linear-gradient(90deg,#202a2c 0 4px,#151c1e 4px 8px);
+    border:1px solid #4e5c61;
+    border-radius:8px;
+}
+
+.hardware-board:after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:60px;
+    left:180px;
+    bottom:60px;
+    background:linear-gradient(90deg,#17221e,#25352d);
+    border:1px solid #4d6158;
+    border-radius:7px;
+}
+
+.hardware-cpu{
+    position:absolute;
+    left:95px;
+    top:110px;
+    width:80px;
+    height:80px;
+    border-radius:8px;
+    background:linear-gradient(145deg,#bfc6ce,#525a63);
+    border:5px solid #252d33;
+    box-shadow:0 0 30px rgba(255,255,255,.1);
+    z-index:2;
+}
+
+.hardware-cpu:after{
+    content:"CPU";
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    color:#182027;
+    font-size:10px;
+    font-weight:900;
+}
+
+.hardware-gpu{
+    position:absolute;
+    left:45px;
+    bottom:115px;
+    width:300px;
+    height:75px;
+    border-radius:10px;
+    background:
+        linear-gradient(145deg,#1b2029,#080a0e);
+    border:1px solid #566174;
+    box-shadow:0 15px 35px rgba(0,0,0,.6);
+    z-index:3;
+}
+
+.hardware-gpu:before{
+    content:"";
+    position:absolute;
+    width:52px;
+    height:52px;
+    left:25px;
+    top:11px;
+    border-radius:50%;
+    border:4px solid #707b8e;
+    box-shadow:80px 0 0 -4px #202631,160px 0 0 -4px #202631;
+}
+
+.hardware-gpu span{
+    position:absolute;
+    right:20px;
+    top:30px;
+    color:#9da8ba;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.component-parts{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.part-card{
+    min-height:175px;
+    padding:22px;
+    border-radius:18px;
+    background:linear-gradient(145deg,#0d121b,#090c12);
+    border:1px solid #222c3c;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.part-card:hover,
+.part-card.active{
+    transform:translateY(-6px);
+    border-color:#ff334f;
+    box-shadow:0 15px 45px rgba(255,30,60,.12);
+}
+
+.part-image{
+    height:75px;
+    border-radius:12px;
+    margin-bottom:15px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(145deg,#151c27,#080b10);
+    overflow:hidden;
+}
+
+.part-image span{
+    color:#c9d2e1;
+    font-weight:900;
+    letter-spacing:2px;
+    font-size:12px;
+}
+
+.part-card h3{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.part-card p{
+    color:#7f8ba1;
+    font-size:11px;
+}
+
+/* BUILDER */
+
+.builder{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:25px;
+}
+
+.dark-card{
+    max-width:none;
+    background:linear-gradient(145deg,#080b12,#0b1019);
+    border-top:1px solid #171f2c;
+    border-bottom:1px solid #171f2c;
+}
+
+.choices{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.choices label{
+    padding:18px;
+    border:1px solid #252e40;
+    background:#0b1018;
+    border-radius:14px;
+    color:#98a5ba;
+    font-size:12px;
+}
+
+select{
+    width:100%;
+    margin-top:10px;
+    padding:13px;
+    color:white;
+    background:#111722;
+    border:1px solid #303a4e;
+    border-radius:9px;
+    outline:none;
+}
+
+.quote-card{
+    border:1px solid #ff334f;
+    border-radius:20px;
+    padding:30px;
+    background:
+        radial-gradient(circle at 100% 0%,rgba(255,30,60,.13),transparent 40%),
+        #0c1119;
+}
+
+.quote-card small{
+    color:#ff4058;
+    letter-spacing:2px;
+}
+
+.quote-card strong{
+    display:block;
+    font-size:30px;
+    margin:15px 0;
+}
+
+.quote-card p{
+    color:#818da1;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* PRODUCTS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.card{
+    padding:28px;
+    border:1px solid #202a3a;
+    border-radius:18px;
+    background:linear-gradient(145deg,#0d121b,#080b11);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#36435b;
+}
+
+.icon{
+    width:48px;
+    height:48px;
+    display:grid;
+    place-items:center;
+    border-radius:12px;
+    background:#151b26;
+    color:#ff3b55;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#7f8ba0;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* BRANDS */
+
+.brands{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+}
+
+.brand-box{
+    padding:25px 10px;
+    text-align:center;
+    border:1px solid #222c3c;
+    border-radius:15px;
+    background:#0b1017;
+    color:#aab5c7;
+    font-weight:800;
+    font-size:13px;
+}
+
+/* REVIEWS */
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.review{
+    padding:26px;
+    border:1px solid #222b3a;
+    border-radius:18px;
+    background:#0b1017;
+}
+
+.stars{
+    color:#ff3b55;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.review p{
+    color:#9aa6b9;
+    line-height:1.7;
+    font-size:13px;
+}
+
+.review b{
+    display:block;
+    margin-top:20px;
+    font-size:12px;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-copy p{
+    max-width:600px;
+    margin-top:25px;
+    color:#8995aa;
+    line-height:1.8;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.stat{
+    padding:25px;
+    border:1px solid #222c3b;
+    border-radius:16px;
+    background:#0b1017;
+}
+
+.stat strong{
+    display:block;
+    font-size:30px;
+}
+
+.stat small{
+    color:#77849a;
+}
+
+/* CONTACT */
+
+.contact{
+    background:
+        linear-gradient(145deg,rgba(255,30,50,.04),transparent),
+        #080c13;
+    border-radius:30px;
+    margin-bottom:70px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:40px;
+}
+
+.contact-box{
+    padding:28px;
+    border:1px solid #252e3d;
+    border-radius:18px;
+    background:#0b1018;
+}
+
+.contact-box b{
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.contact-box p{
+    color:#8995a9;
+    margin-top:17px;
+    line-height:1.5;
+}
+
+input,
+textarea{
+    width:100%;
+    background:#111722;
+    color:white;
+    border:1px solid #2a3446;
+    border-radius:9px;
+    padding:14px;
+    margin-top:12px;
+    outline:none;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.contact-box form{
+    display:flex;
+    flex-direction:column;
+}
+
+/* FOOTER */
+
+footer{
+    padding:45px 6%;
+    border-top:1px solid #171f2d;
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+    align-items:center;
+}
+
+footer p{
+    color:#68758b;
+    font-size:11px;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+    .nav nav{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:60px;
+    }
+
+    .hero-pc{
+        min-height:500px;
+    }
+
+    .component-showcase,
+    .builder,
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .brands{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .nav{
+        padding:12px 4%;
+    }
+
+    .brand img{
+        width:44px;
+        height:44px;
+    }
+
+    .brand b{
+        font-size:13px;
+    }
+
+    .hero{
+        padding:55px 5%;
+        min-height:auto;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .section{
+        padding:70px 5%;
+    }
+
+    .section-head{
+        align-items:start;
+        flex-direction:column;
+    }
+
+    .hardware-stage{
+        min-height:450px;
+    }
+
+    .hardware-board{
+        transform:translate(-50%,-50%) scale(.72);
+    }
+
+    .component-parts{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .choices{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .brands{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+</style>
 </head>
+
 <body>
-  <div class="cursor-dot"></div>
-  <header class="nav">
-    <a class="brand" href="#home"><img src="kp-babu-logo.jpg" alt="K.P. Babu Computers logo"><span><b>K.P. BABU</b><small>COMPUTERS · SINCE 1995</small></span></a>
-    <button class="menu-btn" aria-label="Open menu">☰</button>
-    <nav><a href="#showcase">PC Showcase</a><a href="#builder">PC Builder</a><a href="#products">Components</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
-  </header>
-  <main id="home">
-    <section class="hero"><div class="hero-copy"><div class="eyebrow">TRUSTED SINCE 1995</div><h1>Build your<br><span>next level.</span></h1><p>Gaming PCs, custom builds, components and expert computer service — built around what you actually need.</p><div class="actions"><a class="btn primary" href="#showcase">Explore the PC</a><a class="btn ghost" href="#contact">Get a Quote</a></div></div><div class="hero-pc"><div class="pc-glow"></div><div class="pc-case"><div class="glass"><div class="fan f1"></div><div class="fan f2"></div><div class="fan f3"></div><div class="motherboard"></div><div class="gpu-bar"></div><div class="ram r1"></div><div class="ram r2"></div></div><div class="case-edge"></div></div><div class="hero-caption"><b>PERFORMANCE WITHOUT COMPROMISE</b><span>Custom PC builds · Gaming · Creator systems</span></div></div></section>
-    <section id="showcase" class="section showcase"><div class="section-head"><div><div class="eyebrow">SIGNATURE EXPERIENCE</div><h2>Explore what's <span>inside.</span></h2></div><button id="explodeBtn" class="btn primary">Explore Inside ↗</button></div><div class="interactive-wrap"><div class="component-info" id="componentInfo"><small>HOVER A PART</small><h3>Interactive PC</h3><p>Move your cursor over a component to inspect it.</p></div><div class="pc-stage" id="pcStage"><div class="part case-shell" data-part="Case" style="--x:0px;--y:0px;--z:0px"></div><div class="part motherboard" data-part="Motherboard" style="--x:0px;--y:0px;--z:8px"></div><div class="part cpu" data-part="CPU" style="--x:0px;--y:-8px;--z:25px"></div><div class="part cooler" data-part="CPU Cooler" style="--x:0px;--y:-45px;--z:26px"></div><div class="part gpu" data-part="GPU" style="--x:0px;--y:50px;--z:30px"></div><div class="part ram ram-a" data-part="RAM" style="--x:-42px;--y:-15px;--z:28px"></div><div class="part ram ram-b" data-part="RAM" style="--x:-30px;--y:-15px;--z:28px"></div><div class="part ssd" data-part="M.2 SSD" style="--x:20px;--y:5px;--z:32px"></div><div class="part psu" data-part="Power Supply" style="--x:0px;--y:115px;--z:22px"></div><div class="part fan fan-a" data-part="Case Fan" style="--x:88px;--y:35px;--z:18px"></div><div class="part fan fan-b" data-part="Case Fan" style="--x:88px;--y:78px;--z:18px"></div></div></div><div class="part-grid"><button data-focus="CPU">CPU<br><small>System brain</small></button><button data-focus="GPU">GPU<br><small>Graphics engine</small></button><button data-focus="RAM">RAM<br><small>Fast memory</small></button><button data-focus="Motherboard">Motherboard<br><small>Connects everything</small></button><button data-focus="M.2 SSD">SSD<br><small>Fast storage</small></button><button data-focus="Power Supply">PSU<br><small>Clean power</small></button></div></section>
-    <section id="builder" class="section dark-card"><div class="section-head"><div><div class="eyebrow">CUSTOM BUILDS</div><h2>Build your <span>dream PC.</span></h2></div></div><div class="builder"><div class="choices"><label>Processor<select><option>Ryzen 5 / Core i5 class</option><option>Ryzen 7 / Core i7 class</option><option>Ryzen 9 / Core i9 class</option></select></label><label>Graphics Card<select><option>RTX 3050 / equivalent</option><option>RTX 4060 / equivalent</option><option>RTX 4070 class</option></select></label><label>Memory<select><option>16 GB DDR4/DDR5</option><option>32 GB DDR4/DDR5</option><option>64 GB DDR5</option></select></label><label>Storage<select><option>512 GB NVMe SSD</option><option>1 TB NVMe SSD</option><option>2 TB NVMe SSD</option></select></label></div><div class="quote-card"><small>BUILD ESTIMATE</small><strong>Get a custom quote</strong><p>Choose the parts you want. Final pricing depends on current stock and configuration.</p><a class="btn primary" href="#contact">Request Quote</a></div></div></section>
-    <section id="products" class="section"><div class="section-head"><div><div class="eyebrow">WHAT WE OFFER</div><h2>Everything for your <span>setup.</span></h2></div></div><div class="cards"><article><div class="icon">▣</div><h3>Gaming PCs</h3><p>Balanced systems for competitive gaming and high-quality 1080p/1440p play.</p></article><article><div class="icon">⚙</div><h3>Components</h3><p>CPU, GPU, motherboard, RAM, SSD, PSU, cooling and cabinets.</p></article><article><div class="icon">▤</div><h3>Laptops</h3><p>Everyday, professional, creator and gaming laptop guidance.</p></article><article><div class="icon">⌁</div><h3>Service & Upgrades</h3><p>RAM/SSD upgrades, troubleshooting, cleaning and component replacement.</p></article></div></section>
-    <section id="reviews" class="section reviews"><div class="section-head"><div><div class="eyebrow">CUSTOMER VOICE</div><h2>People who <span>trusted us.</span></h2></div></div><div class="review-grid"><article><div class="stars">★★★★★</div><p>“I got a fantastic deal on a CPU for my studio work from K.P. Babu Computers! 💻 The budget was just right, and the quality is excellent. ✨ The CPU looks super cool with its performance. Huge thanks to Guru Bro for the best suggestion! 👍”</p><b>Customer review</b></article><article><div class="stars">★★★★★</div><p>“Excellent service and genuine guidance. I was confused about which PC to choose for gaming, and the team helped me select the right configuration within my budget.”</p><b>Sample review</b></article><article><div class="stars">★★★★★</div><p>“Got my custom gaming PC and the build quality is excellent. The performance is exactly what I needed.”</p><b>Sample review</b></article><article><div class="stars">★★★★★</div><p>“They explained the components clearly instead of simply pushing an expensive configuration. Very helpful experience.”</p><b>Sample review</b></article></div></section>
-    <section class="section about"><div class="about-copy"><div class="eyebrow">WHY K.P. BABU COMPUTERS?</div><h2>Technology you can <span>trust.</span></h2><p>Serving computer customers since 1995 with practical guidance, custom PC builds, components and technical support.</p></div><div class="stats"><div><strong>1995</strong><small>Since</small></div><div><strong>PC</strong><small>Custom Builds</small></div><div><strong>24/7*</strong><small>Support goal</small></div></div></section>
-    <section id="contact" class="section contact"><div><div class="eyebrow">CONTACT</div><h2>Let's build something <span>great.</span></h2><p class="muted">Replace the placeholders below with the shop's verified details before publishing.</p></div><div class="contact-grid"><div class="contact-box"><b>SHOP DETAILS</b><p>📍 Address: ADD SHOP ADDRESS</p><p>☎ Phone: ADD PHONE NUMBER</p><p>💬 WhatsApp: ADD WHATSAPP NUMBER</p><p>🕒 Hours: ADD BUSINESS HOURS</p></div><form class="contact-box" onsubmit="event.preventDefault(); alert('Demo enquiry form. Connect WhatsApp/email before launch.');"><b>GET A QUOTE</b><input required placeholder="Your name"><input required placeholder="Phone number"><textarea required placeholder="What computer / component do you need?"></textarea><button class="btn primary">Send Enquiry</button></form></div></section>
-  </main>
-  <footer><div class="brand"><img src="kp-babu-logo.jpg" alt="K.P. Babu Computers logo"><span><b>K.P. BABU COMPUTERS</b><small>SINCE 1995</small></span></div><p>© 2026 K.P. Babu Computers. Replace placeholder contact details before launch.</p></footer>
-  <script src="script.js"></script>
-</body>
-</html>
+
+<!-- NAVIGATION -->
+
+<header class="nav">
+
+    <a href="#home" class="brand">
+        <img src="assets/kp-babu-logo.jpg"
+             alt="K.P. Babu Computers logo">
+
+        <span>
+            <b>K.P. BABU</b>
+            <small>COMPUTERS · SINCE 1995</small>
+        </span>
+    </a>
+
+    <nav>
+        <a href="#showcase">Hardware</a>
+        <a href="#builder">PC Builder</a>
+        <a href="#products">Services</a>
+        <a href="#brands">Brands</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu-btn">☰</button>
+
+</header>
+
+
+<main id="home">
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div>
+
+        <div class="eyebrow">
+            TRUSTED SINCE 1995
+        </div>
+
+        <h1>
+            Custom PCs.<br>
+            <span>Gaming rigs.</span><br>
+            Built by hand.
+        </h1>
+
+        <p>
+            Gaming PCs, custom builds, genuine components,
+            laptops and expert computer service —
+            configured around your performance and budget.
+        </p>
+
+        <div class="actions">
+
+            <a href="#showcase"
+               class="btn primary">
+                Explore Hardware ↗
+            </a>
+
+            <a href="#contact"
+               class="btn ghost">
+                Get a Quote
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-pc">
+
+        <div class="pc-glow"></div>
+
+        <div class="pc-realistic">
+
+            <div class="pc-glass">
+
+                <div class="fan f1"></div>
+                <div class="fan f2"></div>
+                <div class="fan f3"></div>
+
+                <div class="ram-stick"></div>
+                <div class="ram-stick two"></div>
+
+                <div class="gpu-bar"></div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-caption">
+
+            <b>
+                PERFORMANCE WITHOUT COMPROMISE
+            </b>
+
+            <span>
+                Custom PC builds · Gaming · Creator systems
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REAL HARDWARE -->
+
+<section id="showcase" class="section">
+
+    <div class="section-head">
+
+        <div>
+
+            <div class="eyebrow">
+                REAL HARDWARE
+            </div>
+
+            <h2>
+                Explore what's <span>inside.</span>
+            </h2>
+
+        </div>
+
+        <p class="muted">
+            Real components. Real performance.
+        </p>
+
+    </div>
+
+
+    <div class="component-showcase">
+
+
+        <div class="hardware-stage">
+
+            <div class="stage-title">
+                PC COMPONENT VIEW · HARDWARE INSIDE
+            </div>
+
+            <div class="hardware-board">
+
+                <div class="hardware-cpu"></div>
+
+                <div class="hardware-gpu">
+                    <span>GRAPHICS CARD</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="component-parts">
+
+
+            <div class="part-card active">
+
+                <div class="part-image">
+                    <span>CPU</span>
+                </div>
+
+                <h3>Processor</h3>
+
+                <p>
+                    AMD Ryzen / Intel Core
+                </p>
+
+            </div>
+
+
+            <div class="part-card">
+
+                <div class="part-image">
+                    <span>GPU</span>
+                </div>
+
+                <h3>Graphics Card</h3>
+
+                <p>
+                    NVIDIA GeForce / AMD Radeon
+                </p>
+
+            </div>
+
+
+            <div class="part-card">
+
+                <div class="part-image">
+                    <span>MB</span>
+                </div>
+
+                <h3>Motherboard</h3>
+
+                <p>
+                    ASUS / MSI
+                </p>
+
+            </div>
+
+
+            <div class="part-card">
+
+                <div class="part-image">
+                    <span>RAM</span>
+                </div>
+
+                <h3>Memory</h3>
+
+                <p>
+                    Corsair / G.Skill
+                </p>
+
+            </div>
+
+
+            <div class="part-card">
+
+                <div class="part-image">
+                    <span>SSD</span>
+                </div>
+
+                <h3>NVMe SSD</h3>
+
+                <p>
+                    Samsung / Western Digital
+                </p>
+
+            </div>
+
+
+            <div class="part-card">
+
+                <div class="part-image">
+                    <span>PSU</span>
+                </div>
+
+                <h3>Power Supply</h3>
+
+                <p>
+                    Corsair / Cooler Master
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PC BUILDER -->
+
+<section id="builder" class="section dark-card">
+
+    <div class="section-head">
+
+        <div>
+
+            <div class="eyebrow">
+       
